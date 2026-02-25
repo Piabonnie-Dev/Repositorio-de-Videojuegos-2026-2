@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Glut/Glut.vcxproj" Id="0e43f651-dd14-49b0-b2e1-b479c65d2dcc" />
+</Solution>
