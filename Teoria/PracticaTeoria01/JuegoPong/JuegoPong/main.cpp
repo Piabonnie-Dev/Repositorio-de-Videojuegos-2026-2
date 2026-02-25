@@ -1,24 +1,34 @@
 #include <Windows.h>
 #include <GL/glut.h>
 #include <math.h>
+#include <stdio.h>
 
-double xpos, ypos, ydir, xdir;         // x and y position for house to be drawn
-double sx, sy, squash;          // xy scale factors
-double rot, rdir;             // rotation
-double ball_speed;
 
-GLfloat T1[16] = { 1.,0.,0.,0.,\
-				  0.,1.,0.,0.,\
-				  0.,0.,1.,0.,\
-				  0.,0.,0.,1. };
-GLfloat S[16] = { 1.,0.,0.,0.,\
-				 0.,1.,0.,0.,\
-				 0.,0.,1.,0.,\
-				 0.,0.,0.,1. };
-GLfloat T[16] = { 1.,0.,0.,0.,\
-				 0., 1., 0., 0.,\
-				 0.,0.,1.,0.,\
-				 0.,0.,0.,1. };
+const float WORLD_W = 160.0f;
+const float WORLD_H = 120.0f;
+
+
+float ballX, ballY;  // el plano X & Y de mi pelota
+float ballRadius = 4.0f;  //radio de mi pelota
+float ballVx, ballVy; // la velocidad de mi pelota en X & Y
+
+// =======Mis paletas ==========
+float paddleW = 4.0f;  //ancho de la paleta
+float paddleH = 24.0f;  // alto de la paleta
+float paddleSpeed = 2.2f; //velocidad de la paleta
+
+// =====jugador 1 y 2=====
+float p1X, p1Y; //jugador 1 
+float p2X, p2Y; // jugador 2
+
+// =====puntaje=====
+int score1 = 0; // puntaje del jugador 1
+int score2 = 0; // puntaje del jugador 2
+// ======Estado del teclado para mover las teclas W y S, Teclas " arriba y abajo"====
+bool keyW = false, keyS = false; //teclas W y S
+bool keyUp = false, KeyDown = false; //Teclas arriba y abajo
+
+
 #define PI 3.1415926535898 
 GLint circle_points = 100;
 void MyCircle2f(GLfloat centerx, GLfloat centery, GLfloat radius) {
@@ -32,13 +42,33 @@ void MyCircle2f(GLfloat centerx, GLfloat centery, GLfloat radius) {
 	glEnd();
 }
 
-GLfloat RadiusOfBall = 15.;
-// Draw the ball, centered at the origin
-void draw_ball() {
-	glColor3f(0.6, 0.3, 0.);
-	MyCircle2f(0., 0., RadiusOfBall);
+void drawRect(float x, float y, float w, float h) {
+	
+	glBegin(GL_QUADS);
+	glVertex2f(x, y);
+	glVertex2f(x + w, y);
+	glVertex2f(x + w, y + h);
+	glVertex2f(x, y + h);
+	glEnd();
+}
+
+
+void drawBall()
+{
+	glColor3f(0.9f, 0.9f, 0.9f);
+	MyCircle2f(ballX, ballY, ballRadius);
 
 }
+
+void drawPaddles() 
+{
+	glColor3f(0.1f, 0.1f, 0.1f);
+	drawRect(p1X, p1Y, paddleW, paddleH);
+	drawRect(p2X, p2Y, paddleW, paddleH);
+
+}
+
+
 
 void Display(void)
 {
