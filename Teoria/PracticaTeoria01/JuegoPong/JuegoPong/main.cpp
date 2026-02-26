@@ -10,6 +10,12 @@ double xpos, ypos, ydir, xdir;         // x and y position for house to be drawn
 double sx, sy, squash;          // xy scale factors
 double rot, rdir;             // rotation
 double ball_speed;
+double p1x, p1y; // jugador izquierdo
+double p2x, p2y; // jugador derecho
+double paddleW = 4.0;
+double paddleH = 24.0;
+double paddleSpeed = 2.0;
+
 
 GLfloat T1[16] = { 1.,0.,0.,0.,\
 				  0.,1.,0.,0.,\
@@ -44,6 +50,17 @@ GLfloat RadiusOfBall = 2.;
 void draw_ball() {
 	glColor3f(1.3, 1.2, 0.4);
 	MyCircle2f(0., 0., RadiusOfBall);
+
+}
+
+void draw_paddle() {
+
+	glBegin(GL_QUADS);
+	glVertex2f(0.0f, 0.0f);
+	glVertex2f((GLfloat)paddleW, 0.0f);
+	glVertex2f((GLfloat)paddleW, (GLfloat)paddleH);
+	glVertex2f(0.0f, (GLfloat)paddleH);
+	glEnd();
 
 }
 
@@ -126,6 +143,25 @@ void Display(void)
 	glMultMatrixf(T1);
 
 	draw_ball();
+
+	//===paleta izquierda===
+	glColor3f(7.0f, 0.0f, 9.0f); //color rosa
+	T[12] = (GLfloat)p1x; // indicando la matriz que dibuje mi paleta en el eje horizontal
+	T[13] = (GLfloat)p1y; // y vertical
+	glLoadMatrixf(T);
+	draw_paddle(); // dibuja las paletas
+
+	// =====paleta derecha=====
+	glColor3f(7.0f, 0.0f, 9.0f); // color rosa
+	T[12] = (GLfloat)p2x;// lo mismo pero con mi paleta derecha
+	T[13] = (GLfloat)p2y;
+	glLoadMatrixf(T);
+	draw_paddle();
+
+
+
+
+
 	glutSwapBuffers();
 	glutPostRedisplay();
 
@@ -162,7 +198,10 @@ void init(void) {
 	squash = 0.9;
 	rot = 0;
 	ball_speed = 0.03;  //velocidad de la bola
-
+	p1x = 6.0f;
+	p1y = (120.0 - paddleH) / paddleSpeed;
+	p2x = 160.0 - 6.0 - paddleW;
+	p2y = (120.0 - paddleH) / paddleSpeed;
 }
 
 void Timer(int value)
