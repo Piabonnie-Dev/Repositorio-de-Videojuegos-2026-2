@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\RV\Repositorio-de-Videojuegos-2026-2\Teoria\PracticaTeoria01\JuegoPong\JuegoPong\Debug\Glut.exe</FullPath>
+      <FullPath>C:\RV\Repositorio-de-Videojuegos-2026-2\Teoria\PracticaTeoria01\JuegoPong\JuegoPong\x64\Debug\Glut.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

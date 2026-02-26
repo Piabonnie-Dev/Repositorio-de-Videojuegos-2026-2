@@ -4,29 +4,26 @@
 #include <stdio.h>
 
 
-const float WORLD_W = 160.0f;
-const float WORLD_H = 120.0f;
+#define PI 3.1415926535898 
 
+double xpos, ypos, ydir, xdir;         // x and y position for house to be drawn
+double sx, sy, squash;          // xy scale factors
+double rot, rdir;             // rotation
+double ball_speed;
 
-float ballX, ballY;  // el plano X & Y de mi pelota
-float ballRadius = 4.0f;  //radio de mi pelota
-float ballVx, ballVy; // la velocidad de mi pelota en X & Y
+GLfloat T1[16] = { 1.,0.,0.,0.,\
+				  0.,1.,0.,0.,\
+				  0.,0.,1.,0.,\
+				  0.,0.,0.,1. };
+GLfloat S[16] = { 1.,0.,0.,0.,\
+				 0.,1.,0.,0.,\
+				 0.,0.,1.,0.,\
+				 0.,0.,0.,1. };
+GLfloat T[16] = { 1.,0.,0.,0.,\
+				 0., 1., 0., 0.,\
+				 0.,0.,1.,0.,\
+				 0.,0.,0.,1. };
 
-// =======Mis paletas ==========
-float paddleW = 4.0f;  //ancho de la paleta
-float paddleH = 24.0f;  // alto de la paleta
-float paddleSpeed = 2.2f; //velocidad de la paleta
-
-// =====jugador 1 y 2=====
-float p1X, p1Y; //jugador 1 
-float p2X, p2Y; // jugador 2
-
-// =====puntaje=====
-int score1 = 0; // puntaje del jugador 1
-int score2 = 0; // puntaje del jugador 2
-// ======Estado del teclado para mover las teclas W y S, Teclas " arriba y abajo"====
-bool keyW = false, keyS = false; //teclas W y S
-bool keyUp = false, KeyDown = false; //Teclas arriba y abajo
 
 
 #define PI 3.1415926535898 
@@ -42,73 +39,56 @@ void MyCircle2f(GLfloat centerx, GLfloat centery, GLfloat radius) {
 	glEnd();
 }
 
-void drawRect(float x, float y, float w, float h) {
-	
-	glBegin(GL_QUADS);
-	glVertex2f(x, y);
-	glVertex2f(x + w, y);
-	glVertex2f(x + w, y + h);
-	glVertex2f(x, y + h);
-	glEnd();
-}
-
-
-void drawBall()
-{
-	glColor3f(0.9f, 0.9f, 0.9f);
-	MyCircle2f(ballX, ballY, ballRadius);
+GLfloat RadiusOfBall = 2.;
+// Draw the ball, centered at the origin
+void draw_ball() {
+	glColor3f(1.3, 1.2, 0.4);
+	MyCircle2f(0., 0., RadiusOfBall);
 
 }
-
-void drawPaddles() 
-{
-	glColor3f(0.1f, 0.1f, 0.1f);
-	drawRect(p1X, p1Y, paddleW, paddleH);
-	drawRect(p2X, p2Y, paddleW, paddleH);
-
-}
-
-
 
 void Display(void)
 {
 	// swap the buffers
-	glutSwapBuffers();
+	
 
 	//clear all pixels with the specified clear color
 	glClear(GL_COLOR_BUFFER_BIT);
 	// 160 is max X value in our world
+	
+	//Movimiento Diagonal
+	sx = 1.0;
+	sy = 1.0; 
 
+	 //Mover la pelota en X y en Y  
+	xpos += xdir * ball_speed;
+	ypos += ydir * ball_speed;
 
-	  // Shape has hit the ground! Stop moving and start squashing down and then back up 
-	if (ypos == RadiusOfBall && ydir == -1) {
-		sy = sy * squash;
-
-		if (sy < 0.8)
-			// reached maximum suqash, now unsquash back up 
-			squash = 1.1;
-		else if (sy > 1.) {
-			// reset squash parameters and bounce ball back upwards
-			sy = 1.;
-			squash = 0.9;
-			ydir = 1;
-		}
-		sx = 1. / sy;
-
-		// 120 is max Y value in our world
+	
+	// El techo de mi ventana, con este if hago que baje la pelota si choca en el techo
+	if (ypos >= 120.0 - RadiusOfBall)
+	{
+		ypos = 120 - RadiusOfBall;
+		ydir = -1;
 
 	}
-	else {
-		// set Y position to increment 1.5 times the direction of the bounce
-		ypos += ydir * ball_speed;
+	// El suelo, hago que sube la pelota
+	else if (ypos <= RadiusOfBall)
+	{
+		ypos = RadiusOfBall;
+		ydir = 1;
+	}
+	// La pared derecha, hago que la pelota se pase a la izquierda
+	if (xpos >= 160 - RadiusOfBall) {
 
-		// If ball touches the top, change direction of ball downwards
-		if (ypos == 120 - RadiusOfBall) {
-			ydir = -1;
-		}
-		// If ball touches the bottom, change direction of ball upwards
-		else if (ypos < RadiusOfBall)
-			ydir = 1;
+		xpos = 160 - RadiusOfBall;
+		xdir = -1;
+	}
+	// pared izquierda, hago que la pelota se pase a la derecha 
+	else if (xpos <= RadiusOfBall) {
+		xpos = RadiusOfBall;
+		xdir = 1;
+
 	}
 
 	/*  //reset transformation state
@@ -146,7 +126,8 @@ void Display(void)
 	glMultMatrixf(T1);
 
 	draw_ball();
-	
+	glutSwapBuffers();
+	glutPostRedisplay();
 
 
 
@@ -172,29 +153,31 @@ void init(void) {
 	//set the clear color
 	glClearColor(0.0, 0.8, 0.0, 1.0);
 	// initial position set to 0,0
-	xpos = 80; ypos = RadiusOfBall; xdir = 1; ydir = 1;
-	sx = 1.; sy = 1.; squash = 0.9;
+	xpos = 80; // la posicion del centro horizontal en mi pantalla
+	ypos = 60; // la posicion central vertical en mi pantalla
+	xdir = 1; // Horizontal
+	ydir = 1; // Vertical
+	sx = 1.; 
+	sy = 1.; 
+	squash = 0.9;
 	rot = 0;
-	ball_speed = 1.5;
+	ball_speed = 0.03;  //velocidad de la bola
 
 }
 
-
-void Timer(int value) {
-
-
-	glutPostRedisplay();          
+void Timer(int value)
+{
+	glutPostRedisplay();
 	glutTimerFunc(16, Timer, 0);
 }
 
 int main(int argc, char* argv[])
 {
-	
 
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
-	glutInitWindowSize(320, 240);
-	glutCreateWindow("Bouncing Ball");
+	glutInitWindowSize(1080, 1920);
+	glutCreateWindow("Juego Pong Elliot Kenneth");
 	init();
 	glutDisplayFunc(Display);
 	glutReshapeFunc(reshape);
