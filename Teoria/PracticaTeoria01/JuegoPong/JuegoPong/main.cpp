@@ -9,12 +9,12 @@
 double xpos, ypos, ydir, xdir;         // x and y position for house to be drawn
 double sx, sy, squash;          // xy scale factors
 double rot, rdir;             // rotation
-double ball_speed;
+double ball_speed; // velocidad de la pelota
 double p1x, p1y; // jugador izquierdo
 double p2x, p2y; // jugador derecho
-double paddleW = 4.0;
-double paddleH = 24.0;
-double paddleSpeed = 2.0;
+double paddleW = 4.0; //anchura de mis paletas x
+double paddleH = 24.0; //altura de mis paletas y
+double paddleSpeed = 10.0; //velocidad de las paletas 
 
 
 GLfloat T1[16] = { 1.,0.,0.,0.,\
@@ -64,6 +64,62 @@ void draw_paddle() {
 
 }
 
+void keyboard(unsigned char key, int x, int y)
+{
+	switch (key)
+	{
+	case 'w':  //si aprieta la tecla w o W mayuscula, la paleta subira 
+	case 'W':
+
+		p1y += paddleSpeed; 
+		break;
+
+
+	case 's':// si aprieta s o S, la paleta bajara
+	case 'S':
+		p1y -= paddleSpeed;
+		break;
+
+	case 27:
+		exit(0);
+
+	}
+	if (p1y < 0.0)p1y = 0.0;  //si la paleta es menor a la posicion de 0.0, se mantendra quieta en el borde 0.0
+	if (p1y + paddleH > 120.0) p1y = 120.0 - paddleH; // 
+
+
+
+}
+
+
+void specialKeys(int key, int x, int y) {
+
+
+	switch (key)
+	{
+
+	case GLUT_KEY_UP:
+		p2y += paddleSpeed;
+		break;
+
+
+	case GLUT_KEY_DOWN:
+		p2y -= paddleSpeed;
+		break;
+
+	case 27:
+
+			exit(0);
+
+
+	}
+
+	if (p2y + paddleH > 120.0) p2y = 120.0 - paddleH;
+	if (p2y < 0.0) p2y = 0.0;
+}
+
+
+
 void Display(void)
 {
 	// swap the buffers
@@ -108,21 +164,33 @@ void Display(void)
 
 	}
 
-	/*  //reset transformation state
-	  glLoadIdentity();
+// Colision de paletas
+	bool hitP1 = // paelta izquierda
+		(xpos - RadiusOfBall <= p1x + paddleW) && // el lado izquierdo de la pelota esta afuera o sobre el lado derecho de la paleta  
+		(xpos + RadiusOfBall >= p1x) && // lo mismo pero del lado izquierdo de la paleta
+		(ypos + RadiusOfBall >= p1y) && // el lado superior de la pelota esta muy a la abajo del suelo  de la paleta
+		(ypos - RadiusOfBall <= p1y + paddleH); // el lado inferior de la pelota esta muy arriba del techo de la paleta
+	if (hitP1 && xdir < 0) // rebotar o golpear la pelota, si es que viene la pelota hacia el lado izquierdo
+	{
+		xpos = p1x + paddleW + RadiusOfBall; // sacar la pelota de la paleta y lanzarlo desde el lado derecho de la paleta
+		xdir = 1; // la pelota sera lanzada hacia el eje x en positivo (derecha)
 
-	  // apply translation
-	  glTranslatef(xpos,ypos, 0.);
+	}
 
-	  // Translate ball back to center
-	  glTranslatef(0.,-RadiusOfBall, 0.);
-	  // Scale the ball about its bottom
-	  glScalef(sx,sy, 1.);
-	  // Translate ball up so bottom is at the origin
-	  glTranslatef(0.,RadiusOfBall, 0.);
-	  // draw the ball
-	  draw_ball();
-	*/
+	bool hitP2 =
+		(xpos + RadiusOfBall >= p2x) &&
+		(xpos - RadiusOfBall <= p2x + paddleW) &&
+		(ypos + RadiusOfBall >= p2y) &&
+		(ypos - RadiusOfBall <= p2y + paddleH);
+
+	if (hitP2 && xdir > 0) { 
+		xpos = p2x - RadiusOfBall;
+		xdir = -1;                 
+	}
+
+
+
+
 
 	//Translate the bouncing ball to its new position
 	T[12] = xpos;
@@ -191,17 +259,17 @@ void init(void) {
 	// initial position set to 0,0
 	xpos = 80; // la posicion del centro horizontal en mi pantalla
 	ypos = 60; // la posicion central vertical en mi pantalla
-	xdir = 1; // Horizontal
+	xdir =  1; // Horizontal
 	ydir = 1; // Vertical
 	sx = 1.; 
 	sy = 1.; 
 	squash = 0.9;
 	rot = 0;
 	ball_speed = 0.03;  //velocidad de la bola
-	p1x = 6.0f;
-	p1y = (120.0 - paddleH) / paddleSpeed;
+	p1x = 6.0f; 
+	p1y = (120.0 - paddleH) / 2.0;
 	p2x = 160.0 - 6.0 - paddleW;
-	p2y = (120.0 - paddleH) / paddleSpeed;
+	p2y = (120.0 - paddleH) / 2.0;
 }
 
 void Timer(int value)
@@ -219,6 +287,8 @@ int main(int argc, char* argv[])
 	glutCreateWindow("Juego Pong Elliot Kenneth");
 	init();
 	glutDisplayFunc(Display);
+	glutKeyboardFunc(keyboard);
+	glutSpecialFunc(specialKeys); 
 	glutReshapeFunc(reshape);
 	glutTimerFunc(16, Timer, 0);
 	glutMainLoop();
