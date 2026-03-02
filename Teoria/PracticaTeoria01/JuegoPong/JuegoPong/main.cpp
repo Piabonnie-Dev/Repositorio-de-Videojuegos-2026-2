@@ -13,7 +13,7 @@ double ball_speed; // velocidad de la pelota
 double p1x, p1y; // jugador izquierdo
 double p2x, p2y; // jugador derecho
 double paddleW = 4.0; //anchura de mis paletas x
-double paddleH = 24.0; //altura de mis paletas y
+double paddleH = 24; //altura de mis paletas y
 double paddleSpeed = 10.0; //velocidad de las paletas 
 
 
@@ -48,7 +48,7 @@ void MyCircle2f(GLfloat centerx, GLfloat centery, GLfloat radius) {
 GLfloat RadiusOfBall = 2.;
 // Draw the ball, centered at the origin
 void draw_ball() {
-	glColor3f(1.3, 1.2, 0.4);
+	glColor3f(0, 0., 0);
 	MyCircle2f(0., 0., RadiusOfBall);
 
 }
@@ -61,6 +61,15 @@ void draw_paddle() {
 	glVertex2f((GLfloat)paddleW, (GLfloat)paddleH);
 	glVertex2f(0.0f, (GLfloat)paddleH);
 	glEnd();
+
+}
+
+void draw_scene() {
+
+	glBegin(GL_QUADS);
+	glVertex2f(0.0f, 0.0f);
+
+
 
 }
 
@@ -213,14 +222,14 @@ void Display(void)
 	draw_ball();
 
 	//===paleta izquierda===
-	glColor3f(7.0f, 0.0f, 9.0f); //color rosa
+	glColor3f(0.0f, 0.0f, 9.0f); //color rosa
 	T[12] = (GLfloat)p1x; // indicando la matriz que dibuje mi paleta en el eje horizontal
 	T[13] = (GLfloat)p1y; // y vertical
 	glLoadMatrixf(T);
 	draw_paddle(); // dibuja las paletas
 
 	// =====paleta derecha=====
-	glColor3f(7.0f, 0.0f, 9.0f); // color rosa
+	glColor3f(6.0f, 0.0f, 0.0f); // color rosa
 	T[12] = (GLfloat)p2x;// lo mismo pero con mi paleta derecha
 	T[13] = (GLfloat)p2y;
 	glLoadMatrixf(T);
@@ -255,7 +264,7 @@ void reshape(int w, int h)
 
 void init(void) {
 	//set the clear color
-	glClearColor(0.0, 0.8, 0.0, 1.0);
+	glClearColor(0.0, 0.8, 1.0, 1.0);
 	// initial position set to 0,0
 	xpos = 80; // la posicion del centro horizontal en mi pantalla
 	ypos = 60; // la posicion central vertical en mi pantalla
