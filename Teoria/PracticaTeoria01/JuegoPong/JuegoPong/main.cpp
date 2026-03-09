@@ -57,8 +57,9 @@ void resetBall(int direction)
     ypos = 60.0;
     xdir = direction;
     ydir = 1.0;
+    p1y = (120.0 - paddleH) / 2.0;
+    p2y = (120.0 - paddleH) / 2.0;
     gameStarted = false;
-    printf("Presiona ESPACIO para sacar. Marcador: Jugador 1 = %d | Jugador 2 = %d\n", scoreP1, scoreP2);
 }
 
 // Draw the ball, centered at the origin
@@ -94,14 +95,19 @@ void keyboard(unsigned char key, int x, int y)
     {
     case 'w':  //si aprieta la tecla w o W mayuscula, la paleta subira 
     case 'W':
-
-        p1y += paddleSpeed;
+        if (gameStarted)
+        {
+            p1y += paddleSpeed;
+        }
         break;
 
 
     case 's':// si aprieta s o S, la paleta bajara
     case 'S':
-        p1y -= paddleSpeed;
+        if (gameStarted)
+        {
+            p1y -= paddleSpeed;
+        }
         break;
 
     case ' ':
@@ -127,12 +133,18 @@ void specialKeys(int key, int x, int y) {
     {
 
     case GLUT_KEY_UP:
-        p2y += paddleSpeed;
+        if (gameStarted)
+        {
+            p2y += paddleSpeed;
+        }
         break;
 
 
     case GLUT_KEY_DOWN:
-        p2y -= paddleSpeed;
+        if (gameStarted)
+        {
+            p2y -= paddleSpeed;
+        }
         break;
 
     case 27:
@@ -153,6 +165,31 @@ double clampYDir(double value)
     if (value > 1.0) return 1.0;
     if (value < -1.0) return -1.0;
     return value;
+}
+
+void drawText(float x, float y, const char* text)
+{
+    glRasterPos2f(x, y);
+    while (*text)
+    {
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, *text);
+        text++;
+    }
+}
+
+void drawHUD()
+{
+    char marcador[100];
+    sprintf_s(marcador, "Jugador 1: %d    Jugador 2: %d", scoreP1, scoreP2);
+
+    glColor3f(0.0f, 0.0f, 0.0f);
+    glLoadIdentity();
+    drawText(52.0f, 114.0f, marcador);
+
+    if (!gameStarted)
+    {
+        drawText(43.0f, 108.0f, "Presiona ESPACIO para comenzar");
+    }
 }
 
 void Display(void)
@@ -270,7 +307,7 @@ void Display(void)
     draw_paddle();
 
 
-
+    drawHUD();
 
 
     glutSwapBuffers();
@@ -314,8 +351,7 @@ void init(void) {
     p2x = 160.0 - 6.0 - paddleW;
     p2y = (120.0 - paddleH) / 2.0;
 
-    printf("Juego listo. Presiona ESPACIO para comenzar.\n");
-    printf("Marcador: Jugador 1 = %d | Jugador 2 = %d\n", scoreP1, scoreP2);
+
 }
 
 void Timer(int value)
