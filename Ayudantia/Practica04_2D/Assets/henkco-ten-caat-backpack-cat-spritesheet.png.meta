@@ -218,15 +218,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: henkco-ten-caat-backpack-cat-spritesheet_0
+      name: GATO
       rect:
         serializedVersion: 2
-        x: 27
-        y: 479
-        width: 70
-        height: 102
+        x: 28
+        y: 480
+        width: 68
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -243,12 +243,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_1
       rect:
         serializedVersion: 2
-        x: 139
-        y: 479
-        width: 78
-        height: 102
+        x: 140
+        y: 480
+        width: 76
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -265,12 +265,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_2
       rect:
         serializedVersion: 2
-        x: 258
-        y: 479
-        width: 79
-        height: 98
+        x: 259
+        y: 480
+        width: 77
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -287,12 +287,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_3
       rect:
         serializedVersion: 2
-        x: 379
-        y: 479
-        width: 78
-        height: 98
+        x: 380
+        y: 480
+        width: 76
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -309,12 +309,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_4
       rect:
         serializedVersion: 2
-        x: 503
-        y: 479
-        width: 74
-        height: 102
+        x: 504
+        y: 480
+        width: 72
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -331,12 +331,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_5
       rect:
         serializedVersion: 2
-        x: 631
-        y: 479
-        width: 66
-        height: 102
+        x: 632
+        y: 480
+        width: 64
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -353,12 +353,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_6
       rect:
         serializedVersion: 2
-        x: 751
-        y: 479
-        width: 66
-        height: 102
+        x: 752
+        y: 480
+        width: 64
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -375,12 +375,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_7
       rect:
         serializedVersion: 2
-        x: 871
-        y: 479
-        width: 66
-        height: 103
+        x: 872
+        y: 480
+        width: 64
+        height: 101
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -397,12 +397,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_8
       rect:
         serializedVersion: 2
-        x: 27
-        y: 359
-        width: 70
-        height: 102
+        x: 28
+        y: 360
+        width: 68
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -419,12 +419,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_9
       rect:
         serializedVersion: 2
-        x: 139
-        y: 359
-        width: 78
-        height: 102
+        x: 140
+        y: 360
+        width: 76
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -441,12 +441,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_10
       rect:
         serializedVersion: 2
-        x: 258
-        y: 359
-        width: 79
-        height: 102
+        x: 259
+        y: 360
+        width: 77
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -463,12 +463,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_11
       rect:
         serializedVersion: 2
-        x: 379
-        y: 359
-        width: 78
-        height: 102
+        x: 380
+        y: 360
+        width: 76
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -485,12 +485,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_12
       rect:
         serializedVersion: 2
-        x: 503
-        y: 359
-        width: 74
-        height: 102
+        x: 504
+        y: 360
+        width: 72
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -507,12 +507,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_13
       rect:
         serializedVersion: 2
-        x: 631
-        y: 359
-        width: 66
-        height: 102
+        x: 632
+        y: 360
+        width: 64
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -529,12 +529,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_14
       rect:
         serializedVersion: 2
-        x: 751
-        y: 359
-        width: 66
-        height: 102
+        x: 752
+        y: 360
+        width: 64
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -551,12 +551,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_15
       rect:
         serializedVersion: 2
-        x: 871
-        y: 359
-        width: 66
-        height: 103
+        x: 872
+        y: 360
+        width: 64
+        height: 101
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -573,12 +573,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_16
       rect:
         serializedVersion: 2
-        x: 23
-        y: 239
-        width: 74
-        height: 90
+        x: 24
+        y: 240
+        width: 72
+        height: 88
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -595,12 +595,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_17
       rect:
         serializedVersion: 2
-        x: 147
-        y: 239
-        width: 74
-        height: 98
+        x: 148
+        y: 240
+        width: 72
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -617,12 +617,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_18
       rect:
         serializedVersion: 2
-        x: 267
-        y: 239
-        width: 74
-        height: 103
+        x: 268
+        y: 240
+        width: 72
+        height: 101
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -639,12 +639,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_19
       rect:
         serializedVersion: 2
-        x: 383
-        y: 243
-        width: 74
-        height: 106
+        x: 384
+        y: 244
+        width: 72
+        height: 104
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -661,12 +661,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_20
       rect:
         serializedVersion: 2
-        x: 503
-        y: 243
-        width: 74
-        height: 98
+        x: 504
+        y: 244
+        width: 72
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -683,12 +683,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_21
       rect:
         serializedVersion: 2
-        x: 623
-        y: 239
-        width: 74
-        height: 94
+        x: 624
+        y: 240
+        width: 72
+        height: 92
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -705,12 +705,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_22
       rect:
         serializedVersion: 2
-        x: 743
-        y: 239
-        width: 74
-        height: 94
+        x: 744
+        y: 240
+        width: 72
+        height: 92
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -727,12 +727,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_23
       rect:
         serializedVersion: 2
-        x: 863
-        y: 239
-        width: 74
-        height: 102
+        x: 864
+        y: 240
+        width: 72
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -749,12 +749,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_24
       rect:
         serializedVersion: 2
-        x: 27
-        y: 119
-        width: 70
-        height: 102
+        x: 28
+        y: 120
+        width: 68
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -771,12 +771,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_25
       rect:
         serializedVersion: 2
-        x: 143
-        y: 119
-        width: 74
-        height: 106
+        x: 144
+        y: 120
+        width: 72
+        height: 104
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -793,12 +793,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_26
       rect:
         serializedVersion: 2
-        x: 259
-        y: 119
-        width: 82
-        height: 106
+        x: 260
+        y: 120
+        width: 80
+        height: 104
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -815,12 +815,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_27
       rect:
         serializedVersion: 2
-        x: 379
-        y: 119
-        width: 82
-        height: 103
+        x: 380
+        y: 120
+        width: 80
+        height: 101
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -837,12 +837,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_28
       rect:
         serializedVersion: 2
-        x: 503
-        y: 119
-        width: 78
-        height: 103
+        x: 504
+        y: 120
+        width: 76
+        height: 101
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -859,12 +859,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_29
       rect:
         serializedVersion: 2
-        x: 626
-        y: 119
-        width: 75
-        height: 106
+        x: 627
+        y: 120
+        width: 73
+        height: 104
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -881,12 +881,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_30
       rect:
         serializedVersion: 2
-        x: 751
-        y: 119
-        width: 66
-        height: 106
+        x: 752
+        y: 120
+        width: 64
+        height: 104
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -903,12 +903,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_31
       rect:
         serializedVersion: 2
-        x: 871
-        y: 119
-        width: 66
-        height: 102
+        x: 872
+        y: 120
+        width: 64
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -925,12 +925,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_32
       rect:
         serializedVersion: 2
-        x: 7
+        x: 8
         y: 0
-        width: 102
-        height: 81
+        width: 100
+        height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -947,12 +947,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_33
       rect:
         serializedVersion: 2
-        x: 131
+        x: 132
         y: 0
-        width: 98
-        height: 86
+        width: 96
+        height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -969,12 +969,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_34
       rect:
         serializedVersion: 2
-        x: 255
+        x: 256
         y: 0
-        width: 94
-        height: 89
+        width: 92
+        height: 88
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -991,12 +991,12 @@ TextureImporter:
       name: henkco-ten-caat-backpack-cat-spritesheet_35
       rect:
         serializedVersion: 2
-        x: 371
+        x: 372
         y: 0
-        width: 98
-        height: 89
+        width: 96
+        height: 88
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1013,7 +1013,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 729b5ecf20ac8a14ead2f54f1ca7d157
     internalID: 0
     vertices: []
     indices: 
@@ -1021,9 +1021,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      henkco-ten-caat-backpack-cat-spritesheet_0: 7589075526162389278
+      GATO: 7589075526162389278
       henkco-ten-caat-backpack-cat-spritesheet_1: -7548996742069635317
       henkco-ten-caat-backpack-cat-spritesheet_10: 3079749618730814612
       henkco-ten-caat-backpack-cat-spritesheet_11: 6932250819754347580
