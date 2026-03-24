@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: daa76af69dd3c6242a6cef67207484ec
+guid: 287bf6598df844c4a9a975266b842427
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,7 +33,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: mixamo.com
+      name: corrida
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
